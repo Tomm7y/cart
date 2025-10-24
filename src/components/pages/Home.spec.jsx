@@ -6,8 +6,8 @@ describe('Home page', () => {
 
     it('muestra catalogo de productos', () => {
         render(<Home />)
-        expect(screen.getByText("Oso de peluche patriarcal")).toBeInTheDocument()
-        expect(screen.getByText("Oso grizzli")).toBeInTheDocument()
+        expect(screen.getByText("Manzanas Fuji")).toBeInTheDocument()
+        expect(screen.getByText("Naranjas Valencia")).toBeInTheDocument()
     })
 
 })

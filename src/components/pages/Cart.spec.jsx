@@ -5,18 +5,18 @@ import React from "react"
 describe('Cart page', () => {
     const mockProducts = [
         {
-            code: "1",
+            code: "FR001",
             image: "http://example.com/imagen1.png",
-            name: "Oso patriarcal",
-            description: "Un oso hetero machista",
-            price: "19990"
+            name: "Manzanas Fuji",
+            description: "Manzanas Fuji crujientes y dulces, cultivadas en el Valle del Maule. Perfectas para meriendas saludables o como ingrediente en postres. Estas manzanas son conocidas por su textura firme y su sabor equilibrado entre dulce y ácido.",
+            price: "$1200"
         },
         {
-            code: "2",
+            code: "FR002",
             image: "http://example.com/imagen2.png",
-            name: "Oso africano",
-            description: "Un oso XXXXXL",
-            price: "5990"
+            name: "Naranjas Valencia",
+            description: "Jugosas y ricas en vitamina C, estas naranjas Valencia son ideales para zumos frescos y refrescantes. Cultivadas en condiciones climáticas óptimas que aseguran su dulzura y jugosidad.",
+            price: "$1000"
         }
     ]
     Storage.prototype.getItem = jest.fn(() => JSON.stringify(mockProducts))
@@ -24,13 +24,13 @@ describe('Cart page', () => {
 
     it('muestra productos desde localStorage', () => {
         render(<Cart />)
-        expect(screen.getByText("Oso patriarcal")).toBeInTheDocument()
-        expect(screen.getByText("Oso africano")).toBeInTheDocument()
+        expect(screen.getByText("Manzanas Fuji")).toBeInTheDocument()
+        expect(screen.getByText("Naranjas Valencia")).toBeInTheDocument()
     })
 
-    it('se llama a clear al presionar Limpiar', () => {
+    it('se llama a clear al presionar Vaciar carrito', () => {
         render(<Cart />)
-        const button = screen.getByText("Limpiar carrito")
+        const button = screen.getByText("Vaciar carrito")
         fireEvent.click(button)
         expect(localStorage.clear).toHaveBeenCalled()
     })

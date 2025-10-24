@@ -2,20 +2,23 @@ import React from 'react'
 import Product from '../organisms/Product'
 
 export default function Home() {
-    return (
-        <div id="products">
-            <Product 
-                code="1" 
-                image="https://pronobel.cl/cdn/shop/files/p-125119-1-b0a0e9c2-a525-4e57-88f8-ad72ad34e307_5000x.jpg"
-                name="Oso de peluche patriarcal"
-                description="Osito blanco sis genero"
-                price="29990"/>
-            <Product 
-                code="2" 
-                image="https://buildabear.cl/cdn/shop/files/27633_9e54d773-09e0-4297-8bea-1433c320dce2.jpg"
-                name="Oso grizzli"
-                description="Oso color amarillo hetero"
-                price="21990"/>
-        </div>
-    )
+  return (
+    <div id="products" className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <Product
+        code="FR001"
+        image="https://png.pngtree.com/background/20220723/original/pngtree-fuji-apple-hd-fruit-photography-picture-image_1735822.jpg"
+        name="Manzanas Fuji"
+        description="Manzanas Fuji crujientes y dulces, cultivadas en el Valle del Maule. Perfectas para meriendas saludables o como ingrediente en postres. Estas manzanas son conocidas por su textura firme y su sabor equilibrado entre dulce y ácido."
+        price="$1200"
+      />
+      <Product
+        code="FR002"
+        image="https://citrofrut.com/noticias/wp-content/uploads/2023/02/shutterstock_173674910-scaled.jpg"
+        name="Naranjas Valencia"
+        description="Jugosas y ricas en vitamina C, estas naranjas Valencia son ideales para zumos frescos y refrescantes. Cultivadas en condiciones climáticas óptimas que aseguran su dulzura y jugosidad."
+        price="$1000"
+      />
+    </div>
+  )
 }
+

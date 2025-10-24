@@ -9,18 +9,18 @@ beforeEach(()=>{
 
 describe('Product component', ()=>{
     const mockProduct = {
-        code: "1",
+        code: "FR001",
         image: "http://example.com/imagen1.png",
-        name: "Oso patriarcal",
-        description: "Un oso hetero machista",
-        price: "19990"
+        name: "Manzanas Fuji",
+        description: "Manzanas Fuji crujientes y dulces, cultivadas en el Valle del Maule. Perfectas para meriendas saludables o como ingrediente en postres. Estas manzanas son conocidas por su textura firme y su sabor equilibrado entre dulce y ácido.",
+        price: "$1200"
     }
 
     it('renderiza los datos correctamente', ()=>{
         render(<Product {...mockProduct}/>)
-        expect(screen.getByText("Oso patriarcal")).toBeInTheDocument()
-        expect(screen.getByText("Un oso hetero machista")).toBeInTheDocument()
-        expect(screen.getByText("19990")).toBeInTheDocument()
+        expect(screen.getByText("Manzanas Fuji")).toBeInTheDocument()
+        expect(screen.getByText("Manzanas Fuji crujientes y dulces, cultivadas en el Valle del Maule. Perfectas para meriendas saludables o como ingrediente en postres. Estas manzanas son conocidas por su textura firme y su sabor equilibrado entre dulce y ácido.")).toBeInTheDocument()
+        expect(screen.getByText("$1200")).toBeInTheDocument()
     })
 
     it('se llama a addTocart', ()=>{

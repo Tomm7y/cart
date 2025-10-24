@@ -1,14 +1,15 @@
-import React from "react"
+import React from "react";
 
-export default function Product(props) {
-    const { code, image, name, description, price } = props
+export default function Product({ code, image, name, description, price }) {
+  const addToCart = () => {
+    const current = JSON.parse(localStorage.getItem("products")) || [];
 
-    function addToCart() {
-        const products = JSON.parse(localStorage.getItem('products')) || []
-        products.push(props)
-        localStorage.setItem('products', JSON.stringify(products))
-        console.log(products)
-    }
+    const newProduct = { code, image, name, description, price };
+    const updated = [...current, newProduct];
+    localStorage.setItem("products", JSON.stringify(updated));
+
+    window.dispatchEvent(new Event("cartUpdated"));
+  };
 
     return (
         <>

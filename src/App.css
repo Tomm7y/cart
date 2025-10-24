@@ -43,21 +43,27 @@
 
 #products{
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
 }
 
 .product{
-  outline: 1px #cdcdcd solid;
+  outline: 1px solid #cdcdcd;
   border-radius: 20px;
   max-width: 250px;
+  padding: 1rem;
+  background-color: #fff;
 }
 
 .product-image{
-  width: 250px;  
+  width: 250px;
   height: 250px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  border-radius: 12px;
+  margin-bottom: 10px;
 }
 
 td>img{
